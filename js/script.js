@@ -33,12 +33,13 @@ function activateInput(){
     }
     
     function handleTyping(event){
-        if (event.key === 'Enter'){
+        if (event.key === 'Enter' && event.target.value.trim() != ''){
             if (isEditing){
                 updateTask(event.target.value);
             }else{
                 insertTask(event.target.value);
             }
+            
             
             isEditing = false;
             clearInput();
