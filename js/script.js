@@ -1,8 +1,10 @@
 
 window.addEventListener('load', start);
 
-var globalTasks = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco'];
+var globalTasks = [];
 var inputTasks = null;
+var isEditing = false;
+var currentIndex = null;
 
 function start(){
     inputTasks = document.querySelector('#inputTask');
@@ -24,12 +26,24 @@ function preventFormSubmit(){
 function activateInput(){
     function insertTask(newName){
         globalTasks.push(newName);
-        render();
     }
-
+    
+    function updateTask(newTask){
+        globalTasks[currentIndex] = newTask;
+    }
+    
     function handleTyping(event){
         if (event.key === 'Enter'){
-            insertTask(event.target.value);
+            if (isEditing){
+                updateTask(event.target.value);
+            }else{
+                insertTask(event.target.value);
+            }
+            
+            isEditing = false;
+            clearInput();
+            render();
+            
         }
     }
 
@@ -52,8 +66,23 @@ function render(){
         button.textContent = 'X';
 
         button.addEventListener('click', deleteTask);
-        
+
         return button;
+    }
+    
+    function createSpan(task, index){
+
+        function editTask(){
+            inputTasks.value = task;
+            inputTasks.focus();
+            isEditing = true;
+            currentIndex = index;
+        }
+        var span = document.createElement('span');
+        span.classList.add('clickable');
+        span.textContent = task;
+        span.addEventListener('click', editTask);
+        return span;
     }
 
     var divTasks = document.querySelector('#tasks');
@@ -65,9 +94,7 @@ function render(){
         var li = document.createElement('li');
         
         var button = createDeleteButton(i);
-
-        var span = document.createElement('span');
-        span.textContent = currentTask;
+        var span = createSpan(currentTask, i);
 
         li.appendChild(button);
         li.appendChild(span); 
