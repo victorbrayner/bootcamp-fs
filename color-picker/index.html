@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>RGB Color Picker</title>
+</head>
+<body>
+    <h1>RGB Color Picker</h1>
+    <form>
+        <label>
+            R (Vermelho)
+            <input type="range" id="red" min="0" max="255">
+            <input type="text" id="redNum" value="0" readonly>
+        </label>
+        <br>
+        <label>
+            G (Verde)
+            <input type="range" id="green" min="0" max="255">
+            <input type="text" id="greenNum" value="0" readonly>
+        </label>
+        <br>
+        <label>
+            B (Azul)
+            <input type="range" id="blue" min="0" max="255">
+            <input type="text" id="blueNum" value="0" readonly>
+        </label>
+    </form>
+    <div id="color"></div>
+    
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
