@@ -24,19 +24,15 @@ function getValue(){
         rgb = 'rgb('+redNum.value+','+greenNum.value+','+blueNum.value+')';
         color.style.backgroundColor = rgb;
     }
+
+    function pickColor(primaryColor, primaryValue){
+        primaryColor.addEventListener('change', function(){
+            primaryValue.value = primaryColor.value;
+            displayColor();
+        }, false);
+    }
     
-    red.addEventListener('change', function(){
-        redNum.value = red.value;
-        displayColor();
-    }, false);
-    
-    green.addEventListener('change', function(){
-        greenNum.value = green.value;
-        displayColor();
-    }, false);
-    
-    blue.addEventListener('change', function(){
-        blueNum.value = blue.value;
-        displayColor();
-    }, false);
+    pickColor(red, redNum);
+    pickColor(green, greenNum);
+    pickColor(blue, blueNum);
 }
