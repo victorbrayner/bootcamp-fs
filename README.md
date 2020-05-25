@@ -23,8 +23,8 @@ de servidor e web, funções, estruturas de decisão,
 estruturas de repetição, manipulação de eventos.</p>
 <h3><b>Atividades realizadas no módulo:</b></h3>
 <ul> 
-<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/todolist-js">To-do List</a></li>
-<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/color-picker">RGB Color Picker</a></li>
+<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/todolist-js">To-do List</a></li>
+<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/color-picker">RGB Color Picker</a></li>
 </ul>
 </li>
 <li>
