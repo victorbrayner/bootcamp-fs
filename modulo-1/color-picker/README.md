@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../assets/bootcamp-logo.png">
+  <img src="../../assets/bootcamp-logo.png">
 </p>
 
 <h1 align="center">RGB Color Picker</h1>
