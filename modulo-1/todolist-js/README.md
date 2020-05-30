@@ -16,4 +16,4 @@ Mini-aplicação funcional escrita em JavaScript vanilla. O projeto original era
 ## Desenvolvimento:
 - [x] Código funcional;
 - [ ] Layout estilizado;
-- [ ] Boas práticas de JS;
+- [x] Boas práticas de JS;
