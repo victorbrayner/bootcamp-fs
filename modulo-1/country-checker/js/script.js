@@ -40,7 +40,7 @@ async function fetchCountries(){
             population: country.population,
             flag: country.flag
         }
-    });
+    });    
     render();
 }
 
@@ -74,6 +74,8 @@ function renderCountryList(){
 
         countriesHTML += countryHTML;
     });
+
+    countriesHTML += '</div>';
 
     tabCountries.innerHTML = countriesHTML;
 
