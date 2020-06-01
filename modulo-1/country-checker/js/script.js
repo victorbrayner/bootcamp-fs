@@ -38,7 +38,8 @@ async function fetchCountries(){
             id: country.numericCode,
             name: country.translations.pt,
             population: country.population,
-            flag: country.flag
+            formattedPopulation: formatNumber(population),
+            flag: country.flag,
         }
     });    
     render();
@@ -55,7 +56,7 @@ function renderCountryList(){
     let countriesHTML = '<div>';
 
     allCountries.forEach((country) => {
-        const {name, flag, id, population} = country;
+        const {name, flag, id, population, formattedPopulation} = country;
         const countryHTML = `
         <div class='country'>
             <div>
@@ -67,7 +68,7 @@ function renderCountryList(){
             <div>
                 <ul>
                     <li>${name}</li>
-                    <li>${population}</li>
+                    <li>${formattedPopulation}</li>
             </div>
         </div>
         `;
@@ -86,7 +87,7 @@ function renderFavorites(){
     let favoritesHTML = '<div>';
 
     favCountries.forEach(country => {
-        const {name, flag, id, population} = country;
+        const {name, flag, id, population, formattedPopulation} = country;
         const favCountryHTML = `
             <div class='country'>
                 <div>
@@ -98,7 +99,7 @@ function renderFavorites(){
                 <div>
                     <ul>
                         <li>${name}</li>
-                        <li>${population}</li>
+                        <li>${formattedPopulation}</li>
                 </div>
             </div>
             `;
@@ -124,8 +125,8 @@ function renderSummary(){
         return accumulator + current.population;        
     },0)
 
-    totalPopulationList.textContent = totalPopulation;
-    totalPopulationFav.textContent = totalFavorites;    
+    totalPopulationList.textContent = formatNumber(totalPopulation);
+    totalPopulationFav.textContent = formatNumber(totalFavorites);    
 
 }
 
@@ -166,4 +167,8 @@ function handleCountryButtons(){
         button.addEventListener('click',() => removeFromFavorites(button.id));
 
     })
+}
+
+function formatNumber(number){
+    return numberFormat.format(number);
 }
