@@ -131,4 +131,39 @@ function renderSummary(){
 
 function handleCountryButtons(){
 
+    function addToFavorites(id){
+        const countryToAdd = allCountries.find(country => country.id === id);
+        favCountries = [...favCountries, countryToAdd];
+        favCountries.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        })
+
+        allCountries = allCountries.filter(country => country.id != id);
+
+        render();
+    }
+    function removeFromFavorites(id){
+        const countryToRemove = favCountries.find(country => country.id === id);
+        allCountries = [...allCountries, countryToRemove];
+        allCountries.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        })
+
+        favCountries = favCountries.filter(country => country.id != id);
+
+        render();
+    }
+
+    const countryButtons = Array.from(tabCountries.querySelectorAll('.btn'));
+    const favButtons = Array.from(tabFavorites.querySelectorAll('.btn'));
+
+    countryButtons.forEach(button => {
+        button.addEventListener('click',() => addToFavorites(button.id));
+
+    })
+
+    favButtons.forEach(button => {
+        button.addEventListener('click',() => removeFromFavorites(button.id));
+
+    })
 }
