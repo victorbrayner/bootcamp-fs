@@ -8,10 +8,8 @@ let dataStates;
 async function init(){
     try {
         const readWrite = async () => {
-            const rawDataCities = await readFile("./cities.json");
-            dataCities = JSON.parse(rawDataCities);
-            const rawDataStates = await readFile("./states.json");
-            dataStates = JSON.parse(rawDataStates);
+            dataCities = JSON.parse(await readFile("./cities.json"));
+            dataStates = JSON.parse(await readFile("./states.json"));
             
             dataStates.forEach(state => {
                 const citiesAndState = dataCities.filter(city => city.Estado === state.ID);
@@ -25,7 +23,7 @@ async function init(){
             const cityJSON = JSON.parse(await readFile (`files/${state}.json`));
             return cityJSON.length;
             }
-            
+
         const howManyCities = async () => {
             const howManyList = [];
             await Promise.all(dataStates.map(async (states)=>{
