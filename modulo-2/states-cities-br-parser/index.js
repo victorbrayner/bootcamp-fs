@@ -1,6 +1,27 @@
-'use strict';
+import { promises } from "fs";
+const { readFile, writeFile } = promises;
 
-const fs = require('fs');
+readWrite();
+
+async function readWrite(){
+    try {
+        const rawDataCities = await readFile("./cities.json");
+        const dataCities = JSON.parse(rawDataCities);
+        const rawDataStates = await readFile("./states.json");
+        const dataStates = JSON.parse(rawDataStates);
+
+        dataStates.forEach(state => {
+            const citiesAndState = dataCities.filter(city => city.Estado === state.ID);
+            writeFile(`files/${state.Sigla}.json`, JSON.stringify(citiesAndState));
+        });
+
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+/* const fs = require('fs');
 
 let rawDataStates = fs.readFileSync('states.json');
 let states = JSON.parse(rawDataStates);
@@ -46,3 +67,4 @@ function mostCities(){
 
 console.log(howManyCities('ES'));
 mostCities();
+ */
