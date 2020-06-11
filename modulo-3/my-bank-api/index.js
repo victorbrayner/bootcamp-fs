@@ -31,6 +31,19 @@ app.post('/account', (req,res) => {
     });
 });
 
+app.get('/account', (_, res) => {
+    fs.readFile('accounts.json', 'utf8', (err, data) => {
+        if (!err) {
+            let json = JSON.parse(data);
+            delete json.nextID;
+            res.send(json);
+        } else {
+            res.status(400).send({ error: err.message });
+        }
+    
+    });
+});
+
 app.listen(3000, function () {
     try {
         fs.readFile('accounts.json', 'utf8', (err, data) => {
