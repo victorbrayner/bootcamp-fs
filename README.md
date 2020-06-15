@@ -25,6 +25,7 @@ estruturas de repetição, manipulação de eventos.</p>
 <ul> 
 <li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/todolist-js">To-do List</a></li>
 <li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/color-picker">RGB Color Picker</a></li>
+ <li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/country-checker">Country Checker</a></li>
 </ul>
 </li>
 <li>
@@ -39,6 +40,12 @@ utilizando as principais operações: <b>GET</b>, <b>POST</b>, <b>PUT</b>,
 e <b>DELETE</b>. Desenvolvimento das operações <b>CRUD</b>.
 <b>Persistência de Dados</b> em Arquivos.
 </p>
+<h3><b>Atividades realizadas no módulo:</b></h3>
+<ul> 
+<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-2/my-bank-api">My Bank API</a></li>
+<li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-1/color-picker">RGB Color Picker</a></li>
+ <li><a href="https://github.com/victorbrayner/bootcamp-fs/tree/master/modulo-2/states-cities-br-parser">BR States e Cities Parser</a></li>
+</ul>
 </li>
 <li>
 <h3><b>FrontEnd com React</b></h3>
