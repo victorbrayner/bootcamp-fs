@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProjetoBase from './components/ProjetoBase/ProjetoBase';
+import Users from './components/users/Users';
 
 export default class App extends Component {
   constructor(){
@@ -27,8 +27,26 @@ export default class App extends Component {
   componentWillUnmount(){
     console.log('componentWillUnmount de App.js')
   }
+
+  handleShowUsers = (event) => {
+    this.setState({showUsers: event.target.checked})
+  }
+  
+
   render() {
-    return <ProjetoBase />;
+    const {showUsers, users} = this.state;
+    
+    return <div>
+      <div className="switch">
+        <label>
+          Mostrar usuários
+          <input type="checkbox" onChange={this.handleShowUsers} />
+          <span className="lever"></span>
+        </label>
+      </div>
+      <hr />
+      {showUsers && <Users users={users} />}
+    </div>;
   }
 }
 
