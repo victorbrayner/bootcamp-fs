@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import User from './User';
+import css from './users.module.css'
 
 export default class Users extends Component {
 
@@ -39,7 +41,7 @@ export default class Users extends Component {
                 <p>Componente Users visível por {secondsVisible} segundos </p>
                 {users.map(user => {
                     const {login, name, picture} = user; 
-                    return <p key={login.uuid}>{name.first}</p>
+                    return <li key={login.uuid}><User user={user} /></li>
                 }
                 )}
             </div>
