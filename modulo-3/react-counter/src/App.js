@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Counter from "./components/Counter/Counter";
 import Counter2 from "./components/Counter/Counter2";
+import Band from "./components/Band";
 
 export default class App extends Component {
   constructor(){
@@ -27,6 +28,8 @@ export default class App extends Component {
     const { currentCounter, steps} = this.state;
     return (
       <>
+        <h3>Band</h3>
+        <Band />
         <h3>Individual Counter</h3>
         <Counter />
         <Counter />
