@@ -23,7 +23,7 @@ export default class App extends Component {
           candidates: json.candidates,
         })
       })
-    }, 1500);
+    }, 1000);
   }
 
   render() {
@@ -35,8 +35,8 @@ export default class App extends Component {
       )
     }
     return (
-      <div>
-        <Header>Votação</Header>
+      <div className="container">
+        <Header>React Voting Monitor</Header>
         <Candidates candidates={candidates} />
       </div>
       )

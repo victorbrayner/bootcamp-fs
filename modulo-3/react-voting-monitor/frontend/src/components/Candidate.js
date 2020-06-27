@@ -6,13 +6,14 @@ import Name from './Name';
 import Votes from './Votes';
 import Percentage from './Percentage';
 import Popularity from './Popularity';
+import css from './candidate.module.css'
 
 
 export default function Candidate({candidate, position}) {
     const { id, name, votes, percentage, popularity } = candidate;
     const imageSource = `${id}.jpg`;
     return (
-        <div>
+        <div className={css.flexRow}>
             <Position>{position}</Position>
             <Picture imageSource={imageSource}/>
             <Info>

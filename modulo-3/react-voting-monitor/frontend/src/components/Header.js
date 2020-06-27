@@ -3,7 +3,7 @@ import React from 'react'
 export default function Header({children}) {
     return (
         <div>
-           <h1>{children}</h1> 
+           <h2 style={{textAlign: 'center'}}>{children}</h2> 
         </div>
     )
 }
