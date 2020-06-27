@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import Preloader from './components/Preloader';
+import Candidates from './components/Candidates';
 
 export default class App extends Component {
   constructor(){
@@ -28,26 +31,13 @@ export default class App extends Component {
 
     if (candidates.length === 0) {
       return (
-      <div className="preloader-wrapper big active">
-        <div className="spinner-layer spinner-blue-only">
-          <div className="circle-clipper left">
-            <div className="circle"></div>
-          </div><div className="gap-patch">
-            <div className="circle"></div>
-          </div><div className="circle-clipper right">
-            <div className="circle"></div>
-          </div>
-        </div>
-      </div>
+        <Preloader description='Carregando...' />
       )
     }
     return (
       <div>
-        {candidates.map(({id, name, votes}) => {
-          return (
-          <p key={id}>{name} - {votes}</p>
-          )
-        })}
+        <Header>Votação</Header>
+        <Candidates candidates={candidates} />
       </div>
       )
   }
